@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from "react";
 //import '../style/Home.css';
-import SongContainer from "./SongContainer";
 
-function PlaylistDisplay(){
+function SongCard(){
 
     return(
 
       <div>
-        <h2>PlaylistDisplay</h2>
+        <h4>SongCard</h4>
       </div>
         
     );
 }
 
-export default PlaylistDisplay;
+export default SongCard;
