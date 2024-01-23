@@ -10,6 +10,7 @@ function PlaylistView(){
       <div>
         <NavBar />
         <h1>PlaylistView</h1>
+        <PlaylistDisplay />
       </div>
         
     );

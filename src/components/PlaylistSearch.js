@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 //import '../style/App.css';
 
-function PlaylistSearch() {
+function PlaylistSearch({search, setSearch}) {
 
   const [search, setSearch] = useState('')
 
