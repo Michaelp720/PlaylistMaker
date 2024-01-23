@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import '../style/App.css';
-import Header from "./Header";
-import PlaylistDisplay from "./PlaylistDisplay";
+//import '../style/App.css';
+import NavBar from "./NavBar";
+import PlaylistDisplay from "./PlaylistContainer";
 
 function PlaylistSearch() {
 
- 
+  const [search, setSearch] = useState('')
 
   return (
     <div className="search">
