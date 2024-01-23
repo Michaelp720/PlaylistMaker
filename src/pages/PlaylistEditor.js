@@ -5,7 +5,10 @@ import NavBar from "../components/NavBar";
 function PlaylistEditor(){
 
     return(
+        <div>
+        <NavBar />
         <h1>PlaylistEditor</h1>
+      </div>
     );
 }
 

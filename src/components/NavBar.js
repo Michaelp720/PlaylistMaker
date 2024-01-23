@@ -12,7 +12,7 @@ function NavBar() {
         Home
       </NavLink>
       <NavLink
-        to="/playlist"
+        to="/editor/0"
         className="nav-link"
       >
         Create New Playlist

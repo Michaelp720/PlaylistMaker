@@ -5,7 +5,12 @@ import NavBar from "../components/NavBar";
 function PlaylistView(){
 
     return(
+
+      <div>
+        <NavBar />
         <h1>PlaylistView</h1>
+      </div>
+        
     );
 }
 
