@@ -19,8 +19,10 @@ function PlaylistContainer() {
         <PlaylistCard key = {playlist.id} id = {playlist.id} title = {playlist.title} image = {playlist.image} description = {playlist.description} followPlaylist = {followPlaylist}/>
       ))
     function followPlaylist(playlistId){
-        console.log(playlistId)
-        //go to `http://localhost:3000/playlists/${playlistId}`
+        //console.log(playlistId)
+        //go to `http://localhost:3001/playlist/${playlistId}`
+        window.location.href = `http://localhost:3001/playlist/${playlistId}`;
+
     }
 
     
