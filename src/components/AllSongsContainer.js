@@ -18,7 +18,7 @@ function AllSongsContainer(){
     const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
 
     const songCards = searchedSongs.map((song) => (
-        <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} image = {song.image}/>
+        <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} editor = {false} allsongs = {true}/>
       ))
 
 

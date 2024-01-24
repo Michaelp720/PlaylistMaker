@@ -4,24 +4,14 @@ import { useParams } from "react-router-dom";
 import SongContainer from "./SongContainer";
 import PlaylistSearch from "./PlaylistSearch";
 
-function PlaylistDisplay(){
+function PlaylistDisplay({playlistId}){
 
-  const [playlist, setPlaylist] = useState({});
-  const params = useParams();
-  const playlistId = params.id;
+  return(
 
-  useEffect(() =>{
-    fetch(`http://localhost:3000/playlists/${playlistId}`)
-    .then(r => r.json())
-    .then(data => setPlaylist(data))
-  }, [playlistId]);
-    return(
-
-      <div>
-        <h2>PlaylistDisplay</h2>
-        <SongContainer playlistId = {playlist.id}/>
-      </div>
-        
+    <div>
+      <h2>PlaylistDisplay</h2>
+      <SongContainer playlistId = {playlistId}/>
+    </div> 
     );
 }
 

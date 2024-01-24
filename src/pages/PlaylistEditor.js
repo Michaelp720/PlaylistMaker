@@ -13,12 +13,13 @@ function PlaylistEditor(){
 
     return(
       <div>
-        <NavBar />
+        <NavBar editor = {true}/>
         <h1>PlaylistEditor</h1>
-        {/* <PlaylistForm /> */}
-        <SongContainer playlistId= {playlistId}/>
+        <PlaylistForm />
+        <h3>Songs in Playlist</h3>
+        <SongContainer editor = {true} playlistId= {playlistId}/>
+        <h3>All Songs</h3>
         <AllSongsContainer/>
-
       </div>
     );
 }

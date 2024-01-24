@@ -9,6 +9,16 @@ function PlaylistView(){
     const params = useParams();
     const playlistId = params.id;
 
+    const [playlist, setPlaylist] = useState({});
+    // const params = useParams();
+    // const playlistId = params.id;
+  
+    useEffect(() => {
+        fetch(`http://localhost:3000/playlists/${playlistId}`)
+        .then(r => r.json())
+        .then(setPlaylist)
+        }, []);
+    
     return(
 
       <div>
@@ -20,7 +30,7 @@ function PlaylistView(){
             Edit
         </NavLink>
         <h1>PlaylistView</h1>
-        <PlaylistDisplay />
+        <PlaylistDisplay playlistId = {playlistId}/>
       </div>
         
     );
