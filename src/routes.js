@@ -18,7 +18,13 @@ const routes = [
     path: "/editor/:id",
     element: <PlaylistEditor />,
     errorElement: <ErrorPage />
-  }
+  },
+  {
+    path: "/editor/new",
+    element: <PlaylistEditor />,
+    errorElement: <ErrorPage />
+  },
+
 ];
 
 export default routes;

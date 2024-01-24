@@ -8,11 +8,12 @@ function SongContainer({playlistId}){
     const[search, setSearch] = useState("");
     const[songs, setSongs] = useState([]);
 
-        useEffect(() => {
-            fetch(`http://localhost:3000/songs/${playlistId}`)
+    useEffect(() => {
+        if(playlistId){
+            fetch(`http://localhost:3000/playlists/${playlistId}`)
             .then(r => r.json())
-            .then(setSongs)
-        }, [])
+            .then((data) => setSongs(data.songs))}
+    }, [])
     
     const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
 
@@ -20,10 +21,11 @@ function SongContainer({playlistId}){
         <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} image = {song.image}/>
       ))
 
+    if (songs.length === 0) return null //stops rendering if creating new playlist
 
     return (
         <div className={`SongContainer`}>
-            <SongSearch search = {search} setSearch={setSearch}/>
+            <SongSearch search = {search} setSearch={setSearch}/> {/* */}
             {songCards}
         </div>
     );
