@@ -12,6 +12,7 @@ function PlaylistEditor(){
     let playlistId = params.id;
 
     const[playlists, setPlaylists] = useState([]);
+    
 
     useEffect(() => {
         fetch(`http://localhost:3000/playlists`)
@@ -19,9 +20,7 @@ function PlaylistEditor(){
         .then(setPlaylists)
     }, [])
 
-    if(!playlistId){
-        playlistId = playlists.length + 1
-    }
+    
 
     const[songs, setSongs] = useState([]);
 
@@ -32,6 +31,9 @@ function PlaylistEditor(){
             .then((data) => setSongs(data.songs))}
     }, [])
 
+    if(!playlistId){
+        playlistId = playlists.length + 1
+    }
 
     function handleAdd(songObj){
         songObj.id = songs.length + 1
@@ -58,6 +60,8 @@ function PlaylistEditor(){
     }
 
     //changes persist here?
+
+
 
     return(
       <div>
