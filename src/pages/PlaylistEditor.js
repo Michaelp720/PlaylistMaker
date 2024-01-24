@@ -11,15 +11,7 @@ function PlaylistEditor(){
     const params = useParams();
     let playlistId = params.id;
 
-    const[songs, setSongs] = useState([]);
-
-    useEffect(() => {
-        if(playlistId){
-            fetch(`http://localhost:3000/playlists/${playlistId}`)
-            .then(r => r.json())
-            .then((data) => setSongs(data.songs))
-            .then(console.log("fetched!"))}
-    }, [])
+    
    
 
     ///////New Playlist////////
@@ -38,7 +30,14 @@ function PlaylistEditor(){
 
     //////////////////////////
 
+    const[songs, setSongs] = useState([]);
 
+    useEffect(() => {
+        if(playlistId && playlistId !== playlists.length +1){
+            fetch(`http://localhost:3000/playlists/${playlistId}`)
+            .then(r => r.json())
+            .then((data) => setSongs(data.songs))}
+    }, [])
 
 
     function handleAdd(songObj){
