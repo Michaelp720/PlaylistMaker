@@ -5,7 +5,7 @@ import SongCard from "./SongCard";
 
 function AllSongsContainer({handleAdd}){
 
-    const playlistId = '';
+    // const playlistId = '';
     const[search, setSearch] = useState("");
     const[songs, setSongs] = useState([]);
 
@@ -22,7 +22,7 @@ function AllSongsContainer({handleAdd}){
     const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
 
     const songCards = searchedSongs.map((song) => (
-        <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} location = {"all"} handleAddRemove = {handleAdd}/>
+        <SongCard key = {song.id} id = {song.id} artist = {song.artist} album = {song.album} title = {song.title} cover = {song.cover} location = {"all"} handleAddRemove = {handleAdd}/>
       ))
 
     

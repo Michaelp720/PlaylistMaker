@@ -4,22 +4,58 @@ import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import PlaylistForm from "../components/PlaylistForm";
 import AllSongsContainer from "../components/AllSongsContainer";
-import SongContainer from "../components/SongContainer";
+//import SongContainer from "../components/SongContainer";
 
 function PlaylistEditor(){
 
     const params = useParams();
-    const playlistId = params.id;
+    let playlistId = params.id;
+
+    const[songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        if(playlistId){
+            fetch(`http://localhost:3000/playlists/${playlistId}`)
+            .then(r => r.json())
+            .then((data) => setSongs(data.songs))
+            .then(console.log("fetched!"))}
+    }, [])
+   
+
+    ///////New Playlist////////
+
+    const[playlists, setPlaylists] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/playlists`)
+        .then(r => r.json())
+        .then(setPlaylists)
+    }, [])
+
+    if(!playlistId){
+        playlistId = playlists.length + 1
+    }
+
+    //////////////////////////
+
+
 
 
     function handleAdd(songObj){
-        //add songObj to db.json of playlistId
-        console.log(`adding ${songObj.title}`)
-    }
+        songObj.id = songs.length + 1
+        songObj.playlistId = playlistId
+        // console.log(`id: ${songObj.id}`)
+        //console.log(`playlist: ${songObj.playlistId}`)
+        setSongs([...songs, songObj])
+    } 
+
     
-   function handleRemove(songObj){
-        //remove songObj from db.json of playlistId
-        console.log(`removing ${songObj.title}`)
+    function handleRemove(songObj){
+        // console.log(`id: ${songObj.id}`)
+        // console.log(`playlist: ${songObj.playlistId}`)
+
+        const newSongArray = songs.filter((song) => song.id !== songObj.id);
+        setSongs(newSongArray)
     }
 
     //changes persist here?
@@ -28,7 +64,7 @@ function PlaylistEditor(){
       <div>
         <NavBar editor = {true}/>
         <h1>PlaylistEditor</h1>
-        <PlaylistForm playlistId={playlistId} handleRemove = {handleRemove}/>
+        <PlaylistForm songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/>
         <h3>All Songs</h3>
         <AllSongsContainer handleAdd = {handleAdd}/>
       </div>

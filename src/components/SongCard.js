@@ -1,9 +1,17 @@
 import React, {useState, useEffect} from "react";
 //import '../style/Home.css';
 
-function SongCard({id, playlistId, title, cover, location, handleAddRemove}){
+function SongCard({id, playlistId, artist, album, title, cover, location, handleAddRemove}){
 
-    const thisSong = {id: id, playlistId: playlistId, title: title, cover: cover}
+    const thisSong = {id: id, playlistId: playlistId, title: title, cover: cover, artist: artist, album: album}
+
+
+    // "id": 4,
+    //     "playlistId": 2,
+    //     "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+    //     "title": "Yet Again",
+    //     "artist": "Grizzly Bear",
+    //     "album": "Shields"
 
 //onClick = {() => handleAddRemove(thisSong)}
 

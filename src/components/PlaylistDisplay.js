@@ -6,12 +6,21 @@ import PlaylistSearch from "./PlaylistSearch";
 
 function PlaylistDisplay({playlistId, title, image, description}){
 
+  const[songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        if(playlistId){
+            fetch(`http://localhost:3000/playlists/${playlistId}`)
+            .then(r => r.json())
+            .then((data) => setSongs(data.songs))}
+    }, [])
+
   return(
 
     <div>
       <h2>PlaylistDisplay</h2>
       <h3>{title}</h3>
-      <SongContainer location = {"display"} playlistId = {playlistId}/>
+      <SongContainer songs = {songs} location = {"display"} playlistId = {playlistId}/>
     </div> 
     );
 }
