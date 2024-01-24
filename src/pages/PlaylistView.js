@@ -30,7 +30,7 @@ function PlaylistView(){
             Edit
         </NavLink>
         <h1>PlaylistView</h1>
-        <PlaylistDisplay playlistId = {playlistId}/>
+        <PlaylistDisplay playlistId = {playlistId} title = {playlist.title} image = {playlist.image} description = {playlist.description} />
       </div>
         
     );

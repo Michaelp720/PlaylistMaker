@@ -11,15 +11,26 @@ function PlaylistEditor(){
     const params = useParams();
     const playlistId = params.id;
 
+
+    function handleAdd(songObj){
+        //add songObj to db.json of playlistId
+        console.log(`adding ${songObj.title}`)
+    }
+    
+   function handleRemove(songObj){
+        //remove songObj from db.json of playlistId
+        console.log(`removing ${songObj.title}`)
+    }
+
+    //changes persist here?
+
     return(
       <div>
         <NavBar editor = {true}/>
         <h1>PlaylistEditor</h1>
-        <PlaylistForm />
-        <h3>Songs in Playlist</h3>
-        <SongContainer editor = {true} playlistId= {playlistId}/>
+        <PlaylistForm playlistId={playlistId} handleRemove = {handleRemove}/>
         <h3>All Songs</h3>
-        <AllSongsContainer/>
+        <AllSongsContainer handleAdd = {handleAdd}/>
       </div>
     );
 }

@@ -1,41 +1,45 @@
 import React, {useState, useEffect} from "react";
 //import '../style/Home.css';
 
-function SongCard({id, playlistId, title, cover, editor, allsongs}){
+function SongCard({id, playlistId, title, cover, location, handleAddRemove}){
 
-    if (editor){
+    const thisSong = {id: id, playlistId: playlistId, title: title, cover: cover}
+
+//onClick = {() => handleAddRemove(thisSong)}
+
+    if(location === "form"){
+        return(
+        <div class="card">
+         {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
+            <div class="card-body">
+                {`${title}-form`}
+            </div>
+            <button onClick = {() => handleAddRemove(thisSong)}>Remove</button>
+        </div>
+        )
+    }
+    else if(location === "all"){
+        return(
+        <div class="card">
+         {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
+            <div class="card-body">
+                {`${title}-all`}
+            </div>
+            <button onClick = {() => handleAddRemove(thisSong)}>Add</button>
+        </div>
+        )
+    }
+    else{
     return(
         <div class="card">
-            {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
+         {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
             <div class="card-body">
-                {`${title}-editor`}
+                {`${title}-display`}
             </div>
-            <button/>
         </div>
+    )}
 
-    );
-}
-    else if(allsongs){
-        return(
-            <div class="card">
-             {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
-                <div class="card-body">
-                    {`${title}-allsongs`}
-                </div>
-            <button/>
-            </div>
-    );
-}
 
-return(
-    <div class="card">
-     {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
-        <div class="card-body">
-            {`${title}-display`}
-        </div>
-    <button/>
-    </div>
-)
 }
 
 export default SongCard;

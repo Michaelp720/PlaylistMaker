@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import SongSearch from "./SongSearch";
 import SongCard from "./SongCard";
 
-function SongContainer({editor, playlistId}){
+function SongContainer({location, playlistId, handleRemove}){
 
     const[search, setSearch] = useState("");
     const[songs, setSongs] = useState([]);
@@ -14,13 +14,15 @@ function SongContainer({editor, playlistId}){
             .then(r => r.json())
             .then((data) => setSongs(data.songs))}
     }, [])
-    
+
     const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
 
   
     const songCards = searchedSongs.map((song) => (
-            <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} editor ={editor} allsongs = {false}/>
+            <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} location ={location} handleAddRemove = {handleRemove}/>
         ))
+
+    
 
     //if (songs.length === 0) return null //stops rendering if creating new playlist
 

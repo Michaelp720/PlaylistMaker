@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import SongContainer from "./SongContainer";
 import PlaylistSearch from "./PlaylistSearch";
 
-function PlaylistDisplay({playlistId}){
+function PlaylistDisplay({playlistId, title, image, description}){
 
   return(
 
     <div>
       <h2>PlaylistDisplay</h2>
-      <SongContainer playlistId = {playlistId}/>
+      <h3>{title}</h3>
+      <SongContainer location = {"display"} playlistId = {playlistId}/>
     </div> 
     );
 }

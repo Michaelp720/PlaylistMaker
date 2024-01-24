@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import SongSearch from "./SongSearch";
 import SongCard from "./SongCard";
 
-function AllSongsContainer(){
+function AllSongsContainer({handleAdd}){
 
     const playlistId = '';
     const[search, setSearch] = useState("");
@@ -14,13 +14,18 @@ function AllSongsContainer(){
             .then(r => r.json())
             .then(setSongs)
         }, [])
+
+    // function handleAddRemove(songObj) {
+    //     handleAdd(songObj)
+    // }
     
     const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
 
     const songCards = searchedSongs.map((song) => (
-        <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} editor = {false} allsongs = {true}/>
+        <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} cover = {song.cover} location = {"all"} handleAddRemove = {handleAdd}/>
       ))
 
+    
 
     return (
         <div className={`AllSongsContainer`}>
