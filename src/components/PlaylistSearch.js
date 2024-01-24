@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 //import '../style/App.css';
 
-function PlaylistSearch() {
-
-  const [search, setSearch] = useState('')
+function PlaylistSearch({search, setSearch}) {
 
   return (
     <div className="playlist-search">

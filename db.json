@@ -23,20 +23,28 @@
         "album": "Veckatimest"
       },
       {
-        "id": 1,
+        "id": 2,
         "playlistId": 1,
-        "cover": "",
+        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
         "title": "Sleeping Ute",
         "artist": "Grizzly Bear",
         "album": "Shields"
       },
       {
-        "id": 1,
+        "id": 3,
         "playlistId": 2,
         "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
         "title": "Southern Point",
         "artist": "Grizzly Bear",
         "album": "Veckatimest"
+      },
+      {
+        "id": 4,
+        "playlistId": 2,
+        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+        "title": "Yet Again",
+        "artist": "Grizzly Bear",
+        "album": "Shields"
       }
     ],
     "allsongs" : [
@@ -48,10 +56,22 @@
         "album": "Veckatimest"
       },
       {"id": 2,
+        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+        "title": "Sleeping Ute",
+        "artist": "Grizzly Bear",
+        "album": "Shields"
+      },
+      {"id": 3,
         "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "title": "Southern Point",
+        "title": "Dory",
         "artist": "Grizzly Bear",
         "album": "Veckatimest"
+      },
+      {"id": 4,
+        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+        "title": "Yet Again",
+        "artist": "Grizzly Bear",
+        "album": "Shields"
       }
     ]
 }

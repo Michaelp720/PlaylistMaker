@@ -5,11 +5,30 @@ import PlaylistCard from "./PlaylistCard.js";
 function PlaylistContainer() {
     
     const[search, setSearch] = useState("");
+    const[playlists, setPlaylists] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/playlists")
+        .then(r => r.json())
+        .then(setPlaylists)
+    }, [])
+
+    const searchedPlaylists = playlists.filter((playlist) => (playlist.title.toLowerCase().includes(search.toLowerCase())))
+
+    const playlistCards = searchedPlaylists.map((playlist) => (
+        <PlaylistCard key = {playlist.id} id = {playlist.id} title = {playlist.title} image = {playlist.image} description = {playlist.description} followPlaylist = {followPlaylist}/>
+      ))
+    function followPlaylist(playlistId){
+        window.location.href = `http://localhost:3001/playlist/${playlistId}`;
+
+    }
+
+    
 
     return (
         <div className="PlaylistContainer">
             <PlaylistSearch search = {search} setSearch={setSearch}/>
-            <PlaylistCard />
+            {playlistCards}
         </div>
     );
 }

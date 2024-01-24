@@ -5,8 +5,6 @@ import PlaylistContainer from "../components/PlaylistContainer";
 
 function Home() {
 
-  // Fetchs here
-
   return (
     <div className="Home">
       <NavBar />
