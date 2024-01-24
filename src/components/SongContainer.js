@@ -21,11 +21,11 @@ function SongContainer({playlistId}){
         <SongCard key = {song.id} id = {song.id} playlistId = {playlistId} title = {song.title} image = {song.image}/>
       ))
 
-    if (songs.length === 0) return null //stops rendering if creating new playlist
+    //if (songs.length === 0) return null //stops rendering if creating new playlist
 
     return (
         <div className={`SongContainer`}>
-            <SongSearch search = {search} setSearch={setSearch}/> {/* */}
+            <SongSearch search = {search} setSearch={setSearch}/>
             {songCards}
         </div>
     );
