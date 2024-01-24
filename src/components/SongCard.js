@@ -20,7 +20,7 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
         <div class="card">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
             <div class="card-body">
-                {`${title}-form`}
+                {`${title}`}
             </div>
             <button onClick = {() => handleAddRemove(thisSong)}>Remove</button>
         </div>
@@ -31,7 +31,7 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
         <div class="card">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
             <div class="card-body">
-                {`${title}-all`}
+                {`${title}`}
             </div>
             <button onClick = {() => handleAddRemove(thisSong)}>Add</button>
         </div>
@@ -42,7 +42,7 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
         <div class="card">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
             <div class="card-body">
-                {`${title}-display`}
+                {`${title}`}
             </div>
         </div>
     )}

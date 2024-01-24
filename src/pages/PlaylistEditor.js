@@ -11,20 +11,8 @@ function PlaylistEditor(){
     const params = useParams();
     let playlistId = params.id;
 
-    const[songs, setSongs] = useState([]);
-
-    useEffect(() => {
-        if(playlistId){
-            fetch(`http://localhost:3000/playlists/${playlistId}`)
-            .then(r => r.json())
-            .then((data) => setSongs(data.songs))
-            .then(console.log("fetched!"))}
-    }, [])
-   
-
-    ///////New Playlist////////
-
     const[playlists, setPlaylists] = useState([]);
+    
 
     useEffect(() => {
         fetch(`http://localhost:3000/playlists`)
@@ -32,14 +20,20 @@ function PlaylistEditor(){
         .then(setPlaylists)
     }, [])
 
+    
+
+    const[songs, setSongs] = useState([]);
+
+    useEffect(() => {
+        if(playlistId && playlistId !== playlists.length +1){
+            fetch(`http://localhost:3000/playlists/${playlistId}`)
+            .then(r => r.json())
+            .then((data) => setSongs(data.songs))}
+    }, [])
+
     if(!playlistId){
         playlistId = playlists.length + 1
     }
-
-    //////////////////////////
-
-
-
 
     function handleAdd(songObj){
         songObj.id = songs.length + 1
@@ -53,18 +47,27 @@ function PlaylistEditor(){
     function handleRemove(songObj){
         // console.log(`id: ${songObj.id}`)
         // console.log(`playlist: ${songObj.playlistId}`)
-
         const newSongArray = songs.filter((song) => song.id !== songObj.id);
+        newSongArray.forEach(song => {
+            song.id = newSongArray.indexOf(song) + 1
+        });
         setSongs(newSongArray)
     }
 
+    function onPlaylistFormSubmit(playlistObj, songs){
+        console.log(playlistObj)
+        console.log(songs)
+    }
+
     //changes persist here?
+
+
 
     return(
       <div>
         <NavBar editor = {true}/>
         <h1>PlaylistEditor</h1>
-        <PlaylistForm songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/>
+        {playlists.length > 0 ? <PlaylistForm playlist = {playlists[playlistId-1]} onPlaylistFormSubmit = {onPlaylistFormSubmit} songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/> : <div>Loading...</div>}
         <h3>All Songs</h3>
         <AllSongsContainer handleAdd = {handleAdd}/>
       </div>
