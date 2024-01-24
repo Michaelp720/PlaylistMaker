@@ -11,11 +11,6 @@ function PlaylistEditor(){
     const params = useParams();
     let playlistId = params.id;
 
-    
-   
-
-    ///////New Playlist////////
-
     const[playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
@@ -27,8 +22,6 @@ function PlaylistEditor(){
     if(!playlistId){
         playlistId = playlists.length + 1
     }
-
-    //////////////////////////
 
     const[songs, setSongs] = useState([]);
 
@@ -52,9 +45,16 @@ function PlaylistEditor(){
     function handleRemove(songObj){
         // console.log(`id: ${songObj.id}`)
         // console.log(`playlist: ${songObj.playlistId}`)
-
         const newSongArray = songs.filter((song) => song.id !== songObj.id);
+        newSongArray.forEach(song => {
+            song.id = newSongArray.indexOf(song) + 1
+        });
         setSongs(newSongArray)
+    }
+
+    function onPlaylistFormSubmit(playlistObj, songs){
+        console.log(playlistObj)
+        console.log(songs)
     }
 
     //changes persist here?
@@ -63,7 +63,7 @@ function PlaylistEditor(){
       <div>
         <NavBar editor = {true}/>
         <h1>PlaylistEditor</h1>
-        <PlaylistForm songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/>
+        {playlists.length > 0 ? <PlaylistForm playlist = {playlists[playlistId-1]} onPlaylistFormSubmit = {onPlaylistFormSubmit} songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/> : <div>Loading...</div>}
         <h3>All Songs</h3>
         <AllSongsContainer handleAdd = {handleAdd}/>
       </div>
