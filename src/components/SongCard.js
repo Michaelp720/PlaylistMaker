@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 //import '../style/Home.css';
 
-function SongCard(){
+function SongCard({id, playlistId, title, image}){
 
     return(
 
       <div>
-        <h4>SongCard</h4>
+        <h4>{title}</h4>
       </div>
         
     );

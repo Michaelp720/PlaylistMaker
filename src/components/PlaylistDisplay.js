@@ -27,8 +27,3 @@ function PlaylistDisplay(){
 
 export default PlaylistDisplay;
 
-
-
-// fetch(`http://localhost:3000/playlist/${id}`)
-//         .then((resp) => resp.json())
-//         .then((data) => renderReviews(data.reviews));

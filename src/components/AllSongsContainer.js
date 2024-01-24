@@ -3,13 +3,14 @@ import React, {useState, useEffect} from "react";
 import SongSearch from "./SongSearch";
 import SongCard from "./SongCard";
 
-function SongContainer({playlistId}){
+function AllSongsContainer(){
 
+    const playlistId = '';
     const[search, setSearch] = useState("");
     const[songs, setSongs] = useState([]);
 
         useEffect(() => {
-            fetch(`http://localhost:3000/songs/${playlistId}`)
+            fetch("http://localhost:3000/allsongs")
             .then(r => r.json())
             .then(setSongs)
         }, [])
@@ -22,11 +23,11 @@ function SongContainer({playlistId}){
 
 
     return (
-        <div className={`SongContainer`}>
+        <div className={`AllSongsContainer`}>
             <SongSearch search = {search} setSearch={setSearch}/>
             {songCards}
         </div>
     );
 }
 
-export default SongContainer;
+export default AllSongsContainer;

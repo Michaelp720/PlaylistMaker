@@ -13,12 +13,13 @@ function PlaylistContainer() {
         .then(setPlaylists)
     }, [])
 
-    const searchedPlaylists = playlists.filter((playlist) => (playlist.title.toLowerCase().includes(search.toLowerCase()) || playlist.description.toLowerCase().includes(search.toLowerCase())))
+    const searchedPlaylists = playlists.filter((playlist) => (playlist.title.toLowerCase().includes(search.toLowerCase())))
 
     const playlistCards = searchedPlaylists.map((playlist) => (
-        <Planeteer key = {playlist.id} id = {playlist.id} title = {playlist.title} image = {playlist.image} description = {playlist.description} followPlaylist = {followPlaylist}/>
+        <PlaylistCard key = {playlist.id} id = {playlist.id} title = {playlist.title} image = {playlist.image} description = {playlist.description} followPlaylist = {followPlaylist}/>
       ))
     function followPlaylist(playlistId){
+        console.log(playlistId)
         //go to `http://localhost:3000/playlists/${playlistId}`
     }
 

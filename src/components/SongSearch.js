@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
 //import '../style/App.css';
 
-function SongSearch() {
+function SongSearch({search, setSearch}) {
 
-  const [search, setSearch] = useState('')
 
   return (
     <div className="song-search">
