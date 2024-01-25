@@ -12,12 +12,28 @@ function PlaylistEditor(){
     let playlistId = params.id;
 
     const[playlists, setPlaylists] = useState([]);
+    const[songsInAllPlaylists, setSongsInAllPlaylists] = useState([]);
+    const[startingSongs, setStartingSongs] = useState([]);
+
+
     
 
     useEffect(() => {
         fetch(`http://localhost:3000/playlists`)
         .then(r => r.json())
         .then(setPlaylists)
+    }, [])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/songs`)
+        .then(r => r.json())
+        .then(setSongsInAllPlaylists)
+    }, [])
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/songs`)
+        .then(r => r.json())
+        .then(setStartingSongs)
     }, [])
 
     
@@ -36,51 +52,80 @@ function PlaylistEditor(){
     }
 
     function handleAdd(songObj){
-        songObj.id = songs.length + 1
-        songObj.playlistId = playlistId
+        songObj.id = songsInAllPlaylists.length + 1
+        songObj.playlistId = parseInt(playlistId)
         // console.log(`id: ${songObj.id}`)
         //console.log(`playlist: ${songObj.playlistId}`)
         setSongs([...songs, songObj])
+        setSongsInAllPlaylists([...songsInAllPlaylists, songObj])
     } 
 
     
     function handleRemove(songObj){
         // console.log(`id: ${songObj.id}`)
         // console.log(`playlist: ${songObj.playlistId}`)
-        const newSongArray = songs.filter((song) => song.id !== songObj.id);
-        newSongArray.forEach(song => {
-            song.id = newSongArray.indexOf(song) + 1
+        const newSongsInAll = songsInAllPlaylists.filter(((song) => song.id !== songObj.id))
+        newSongsInAll.forEach(song => {
+            song.id = newSongsInAll.indexOf(song) + 1
         });
+        setSongsInAllPlaylists(newSongsInAll)
+        const newSongArray = newSongsInAll.filter((song) => song.playlistId == songObj.playlistId)
         setSongs(newSongArray)
     }
 
-    function onPlaylistFormSubmit(playlistObj, songs){
+    function onPlaylistFormSubmit(playlistObj){
         if(playlistObj.id > playlists.length){
-            console.log(playlistObj)
-            console.log(songs)
             fetch("http://localhost:3000/playlists", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(playlistObj),
-              });
+            });
+            // fetch(`http://localhost:3000/songs/1`, {
+            //     method: "DELETE"
+            // })
+            for(let i = 1; i < startingSongs.length+1; i++){
+                fetch(`http://localhost:3000/songs/${i}`, {
+                    method: "DELETE"
+                })}
+                setStartingSongs(songsInAllPlaylists)
+    
+            for(let i = 0; i < songsInAllPlaylists.length; i++){
+                fetch("http://localhost:3000/songs", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(songsInAllPlaylists[i]),
+                });}
         }
         else{
-            console.log("old")
             fetch(`http://localhost:3000/playlists/${playlistObj.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(playlistObj),
-                });
+            });
+            // console.log(songsInAllPlaylists)
+            // console.log(songsInAllPlaylists[0])
+            for(let i = 1; i < startingSongs.length+1; i++){
+            fetch(`http://localhost:3000/songs/${i}`, {
+                method: "DELETE"
+            })}
+            setStartingSongs(songsInAllPlaylists)
+
+            for(let i = 0; i < songsInAllPlaylists.length; i++){
+            fetch("http://localhost:3000/songs", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(songsInAllPlaylists[i]),
+            });}
         }
     }
-
-
-    //changes persist here?
-
 
 
     return(

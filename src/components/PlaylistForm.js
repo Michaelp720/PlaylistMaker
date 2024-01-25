@@ -26,7 +26,7 @@ function PlaylistForm({playlist, onPlaylistFormSubmit, songs, playlistId, handle
     function handleSubmit(e){
         e.preventDefault()
         const editedPlaylist = {id: playlistId, title: playlistTitle, image: playlistImage, description: playlistDescription}
-        onPlaylistFormSubmit(editedPlaylist, songs)
+        onPlaylistFormSubmit(editedPlaylist)
     }
 
   return (
