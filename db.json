@@ -1,77 +1,86 @@
 {
-    "playlists": [
-      {
-        "id": 1,
-        "title": "Summer Vibes",
-        "image": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "description": "Relax on the beach with some sunny psych-rock"
-      },
-      {
-        "id": 2,
-        "title": "Beach Blanket",
-        "image": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
-        "description": "Cozy summer jams!"
-      }
-    ],
-    "songs": [
-      {
-        "id": 1,
-        "playlistId": 1,
-        "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "title": "Dory",
-        "artist": "Grizzly Bear",
-        "album": "Veckatimest"
-      },
-      {
-        "id": 2,
-        "playlistId": 1,
-        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-        "title": "Sleeping Ute",
-        "artist": "Grizzly Bear",
-        "album": "Shields"
-      },
-      {
-        "id": 1,
-        "playlistId": 2,
-        "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "title": "Southern Point",
-        "artist": "Grizzly Bear",
-        "album": "Veckatimest"
-      },
-      {
-        "id": 2,
-        "playlistId": 2,
-        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-        "title": "Yet Again",
-        "artist": "Grizzly Bear",
-        "album": "Shields"
-      }
-    ],
-    "allsongs" : [
-      {
-        "id": 1,
-        "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "title": "Southern Point",
-        "artist": "Grizzly Bear",
-        "album": "Veckatimest"
-      },
-      {"id": 2,
-        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-        "title": "Sleeping Ute",
-        "artist": "Grizzly Bear",
-        "album": "Shields"
-      },
-      {"id": 3,
-        "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-        "title": "Dory",
-        "artist": "Grizzly Bear",
-        "album": "Veckatimest"
-      },
-      {"id": 4,
-        "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-        "title": "Yet Again",
-        "artist": "Grizzly Bear",
-        "album": "Shields"
-      }
-    ]
+  "playlists": [
+    {
+      "id": 1,
+      "title": "Summer Vibes",
+      "image": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "description": "Relax on the beach with some sunny psych-rock"
+    },
+    {
+      "id": 2,
+      "title": "Beach Blanket",
+      "image": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
+      "description": "Cozy summer jams!"
+    },
+    {
+      "id": 3,
+      "title": "Gruzz Buh",
+      "image": "N/A",
+      "description": "A good album of songs"
+    }
+  ],
+  "songs": [
+    {
+      "id": 1,
+      "playlistId": 1,
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "title": "Dory",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
+    },
+    {
+      "id": 2,
+      "playlistId": 1,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+      "title": "Sleeping Ute",
+      "artist": "Grizzly Bear",
+      "album": "Shields"
+    },
+    {
+      "id": 1,
+      "playlistId": 2,
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "title": "Southern Point",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
+    },
+    {
+      "id": 2,
+      "playlistId": 2,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+      "title": "Yet Again",
+      "artist": "Grizzly Bear",
+      "album": "Shields"
+    }
+  ],
+  "allsongs": [
+    {
+      "id": 1,
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "title": "Southern Point",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
+    },
+    {
+      "id": 2,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+      "title": "Sleeping Ute",
+      "artist": "Grizzly Bear",
+      "album": "Shields"
+    },
+    {
+      "id": 3,
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "title": "Dory",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
+    },
+    {
+      "id": 4,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+      "title": "Yet Again",
+      "artist": "Grizzly Bear",
+      "album": "Shields"
+    }
+  ]
 }
