@@ -2,8 +2,8 @@
   "playlists": [
     {
       "id": 1,
-      "title": "Summer Viby",
-      "image": "new img",
+      "title": "Summer Vibey",
+      "image": "https://f4.bcbits.com/img/a0433217568_10.jpg",
       "description": "Relax on the beach with some sunny psych-rock"
     },
     {
@@ -14,9 +14,9 @@
     },
     {
       "id": 3,
-      "title": "Gruzz Buh",
-      "image": "N/A",
-      "description": "A good album of songs"
+      "title": "Gruzz",
+      "image": "img",
+      "description": "food"
     }
   ],
   "songs": [
@@ -37,7 +37,7 @@
       "album": "Shields"
     },
     {
-      "id": 1,
+      "id": 3,
       "playlistId": 2,
       "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
       "title": "Southern Point",
@@ -45,12 +45,20 @@
       "album": "Veckatimest"
     },
     {
-      "id": 2,
+      "id": 4,
       "playlistId": 2,
       "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
       "title": "Yet Again",
       "artist": "Grizzly Bear",
       "album": "Shields"
+    },
+    {
+      "id": 5,
+      "playlistId": 3,
+      "title": "Dory",
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
     }
   ],
   "allsongs": [
