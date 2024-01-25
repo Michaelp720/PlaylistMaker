@@ -55,9 +55,29 @@ function PlaylistEditor(){
     }
 
     function onPlaylistFormSubmit(playlistObj, songs){
-        console.log(playlistObj)
-        console.log(songs)
+        if(playlistObj.id > playlists.length){
+            console.log(playlistObj)
+            console.log(songs)
+            fetch("http://localhost:3000/playlists", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(playlistObj),
+              });
+        }
+        else{
+            console.log("old")
+            // fetch(`http://localhost:4000/items/${item.id}`, {
+            //     method: "PATCH",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(playlistObj),
+            //     })
+        }
     }
+
 
     //changes persist here?
 
