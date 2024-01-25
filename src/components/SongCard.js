@@ -5,16 +5,6 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
 
     const thisSong = {id: id, playlistId: playlistId, title: title, cover: cover, artist: artist, album: album}
 
-
-    // "id": 4,
-    //     "playlistId": 2,
-    //     "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-    //     "title": "Yet Again",
-    //     "artist": "Grizzly Bear",
-    //     "album": "Shields"
-
-//onClick = {() => handleAddRemove(thisSong)}
-
     if(location === "form"){
         return(
         <div class="card">
