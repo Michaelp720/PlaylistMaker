@@ -68,13 +68,13 @@ function PlaylistEditor(){
         }
         else{
             console.log("old")
-            // fetch(`http://localhost:4000/items/${item.id}`, {
-            //     method: "PATCH",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(playlistObj),
-            //     })
+            fetch(`http://localhost:3000/playlists/${playlistObj.id}`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(playlistObj),
+                });
         }
     }
 
