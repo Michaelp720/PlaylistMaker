@@ -54,16 +54,12 @@ function PlaylistEditor(){
     function handleAdd(songObj){
         songObj.id = songsInAllPlaylists.length + 1
         songObj.playlistId = parseInt(playlistId)
-        // console.log(`id: ${songObj.id}`)
-        //console.log(`playlist: ${songObj.playlistId}`)
         setSongs([...songs, songObj])
         setSongsInAllPlaylists([...songsInAllPlaylists, songObj])
     } 
 
     
     function handleRemove(songObj){
-        // console.log(`id: ${songObj.id}`)
-        // console.log(`playlist: ${songObj.playlistId}`)
         const newSongsInAll = songsInAllPlaylists.filter(((song) => song.id !== songObj.id))
         newSongsInAll.forEach(song => {
             song.id = newSongsInAll.indexOf(song) + 1
@@ -82,9 +78,6 @@ function PlaylistEditor(){
                 },
                 body: JSON.stringify(playlistObj),
             });
-            // fetch(`http://localhost:3000/songs/1`, {
-            //     method: "DELETE"
-            // })
             for(let i = 1; i < startingSongs.length+1; i++){
                 fetch(`http://localhost:3000/songs/${i}`, {
                     method: "DELETE"
@@ -108,8 +101,6 @@ function PlaylistEditor(){
                 },
                 body: JSON.stringify(playlistObj),
             });
-            // console.log(songsInAllPlaylists)
-            // console.log(songsInAllPlaylists[0])
             for(let i = 1; i < startingSongs.length+1; i++){
             fetch(`http://localhost:3000/songs/${i}`, {
                 method: "DELETE"
