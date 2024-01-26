@@ -7,7 +7,7 @@ function SongContainer({songs, location, playlistId, handleRemove}){
 
     const[search, setSearch] = useState("");
 
-    const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
+    const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase()) || song.artist.toLowerCase().includes(search.toLowerCase()) || song.album.toLowerCase().includes(search.toLowerCase())))
 
   
     const songCards = searchedSongs.map((song) => (

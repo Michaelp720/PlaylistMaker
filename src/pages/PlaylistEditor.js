@@ -128,18 +128,27 @@ function PlaylistEditor(){
     }
 
 
+    // function deletePlaylist(){
+    //     fetch(`http://localhost:3000/playlists/${playlistId}`, {
+    //               method: "DELETE"
+    //     })
+    //     setSongsInAllPlaylists()
+    //     window.location.href = `http://localhost:3001`
+    // }
 
-    function logAllSongsLength(){
-        console.log(`Num all songs: ${songsInAllPlaylists.length}`)
-        console.log(songsInAllPlaylists)
-    }
+    // function logAllSongsLength(){
+    //     console.log(`Num all songs: ${songsInAllPlaylists.length}`)
+    //     console.log(songsInAllPlaylists)
+    // }
 
     return(
       <div>
         <NavBar editor = {true}/>
-        <button onClick = {logAllSongsLength}>Log</button>
+        {/* <button onClick = {deletePlaylist}>Delete Playlist</button> */}
+        {/* <button onClick = {logAllSongsLength}>Log</button> */}
         <h1>PlaylistEditor</h1>
         {playlists.length > 0 ? <PlaylistForm playlist = {playlists[playlistId-1]} onPlaylistFormSubmit = {onPlaylistFormSubmit} songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/> : <div>Loading...</div>}
+        
         <h3>All Songs</h3>
         <AllSongsContainer handleAdd = {handleAdd}/>
         

@@ -19,12 +19,7 @@ function PlaylistView(){
         .then(setPlaylist)
         }, []);
 
-    // function deletePlaylist(){
-    //   fetch(`http://localhost:3000/playlists/${playlistId}`, {
-    //             method: "DELETE"
-    //   })
-    //   window.location.href = `http://localhost:3001`
-    // }
+
     
     
     return(
@@ -37,7 +32,6 @@ function PlaylistView(){
             >
             Edit
         </NavLink>
-        {/* <button onClick = {deletePlaylist}>Delete Playlist</button> */}
         <PlaylistDisplay playlistId = {playlistId} title = {playlist.title} image = {playlist.image} description = {playlist.description} />
       </div>
         
