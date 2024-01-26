@@ -2,7 +2,7 @@
   "playlists": [
     {
       "id": 1,
-      "title": "Summer Vibes",
+      "title": "Summer Energy!",
       "image": "https://a.cdn-hotels.com/gdcs/production93/d498/e9d1655b-1dda-4e21-8402-c7a77c920611.jpg",
       "description": "Relax on the beach with some sunny psych-rock"
     },
@@ -10,13 +10,19 @@
       "id": 2,
       "title": "Beach Blanket",
       "image": "https://assets.wfcdn.com/im/36269696/resize-h445%5Ecompr-r85/2479/247913471/70.8%27%27+Beach+Umbrella.jpg",
-      "description": "Cozy summer jams!"
+      "description": "Cozy jams for the beach!"
+    },
+    {
+      "id": 3,
+      "title": "New Playlist",
+      "image": "Image Link",
+      "description": "Description"
     }
   ],
   "songs": [
     {
       "id": 1,
-      "playlistId": 1,
+      "playlistId": 2,
       "title": "Yet Again",
       "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
       "artist": "Grizzly Bear",
@@ -24,24 +30,24 @@
     },
     {
       "id": 2,
-      "playlistId": 2,
-      "title": "Midnight City",
-      "cover": "https://upload.wikimedia.org/wikipedia/en/9/94/M83_Hurry_Up%2C_We%27re_Dreaming.jpg",
-      "artist": "M83",
-      "album": "Hurry Up, We're Dreaming"
-    },
-    {
-      "id": 3,
-      "playlistId": 1,
-      "title": "The Scientist",
-      "cover": "https://upload.wikimedia.org/wikipedia/en/e/e1/Coldplay_-_A_Rush_of_Blood_to_the_Head.jpg",
-      "artist": "Coldplay",
-      "album": "A Rush of Blood to the Head"
+      "playlistId": 3,
+      "title": "Southern Point",
+      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "artist": "Grizzly Bear",
+      "album": "Veckatimest"
     },
     {
       "id": 4,
-      "playlistId": 2,
-      "title": "Dory",
+      "playlistId": 3,
+      "title": "Yet Again",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
+      "artist": "Grizzly Bear",
+      "album": "Shields"
+    },
+    {
+      "id": 3,
+      "playlistId": 3,
+      "title": "Southern Point",
       "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
       "artist": "Grizzly Bear",
       "album": "Veckatimest"
@@ -187,6 +193,13 @@
       "title": "1901",
       "artist": "Phoenix",
       "album": "Wolfgang Amadeus Phoenix"
+    },
+    {
+      "id": 21,
+      "cover": "placeholder",
+      "title": "Snow (Hey Oh)",
+      "artist": "Red Hot Chili Peppers",
+      "album": "Stadium Arcadium"
     }
   ]
 }

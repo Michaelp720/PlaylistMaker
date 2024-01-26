@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import PlaylistForm from "../components/PlaylistForm";
 import AllSongsContainer from "../components/AllSongsContainer";
-//import SongContainer from "../components/SongContainer";
 
 function PlaylistEditor(){
 
@@ -106,12 +105,12 @@ function PlaylistEditor(){
             .then(console.log(`deleted: ${count} startLength: ${startLength} allLength: ${allLength}`), count++, console.log(`count now: ${count}`), deleteSongs(count, startLength, allLength))
         }
         else{
-            console.log("all deleted, times run:" + count + "allLength: " + allLength)
-            postSongsTest(0, allLength)
+            //console.log("all deleted, times run:" + count + "allLength: " + allLength)
+            postSongs(0, allLength)
         }
     }
 
-    function postSongsTest(count, length){
+    function postSongs(count, length){
         if(count < length){
         fetch("http://localhost:3000/songs", {
                 method: "POST",
@@ -120,7 +119,7 @@ function PlaylistEditor(){
                 },
                 body: JSON.stringify(songsInAllPlaylists[count]),
             })
-            .then(console.log(`posted: ${songsInAllPlaylists[count].id} length: ${length} (4 expected)`), count++, postSongsTest(count, length))}
+            .then(console.log(`posted: ${songsInAllPlaylists[count].id} length: ${length} (4 expected)`), count++, postSongs(count, length))}
         else{
             //console.log("stopped")
             window.location.href = `http://localhost:3001`
