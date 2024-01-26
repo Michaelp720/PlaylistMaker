@@ -18,9 +18,12 @@ function PlaylistDisplay({playlistId, title, image, description}){
   return(
 
     <div>
-      <h2>PlaylistDisplay</h2>
-      <h3>{title}</h3>
-      <SongContainer songs = {songs} location = {"display"} playlistId = {playlistId}/>
+      <h1>{title}</h1>
+      <img src={image} alt="" width="200" height="auto"></img>
+      <h6>{description}</h6>
+        <SongContainer songs = {songs} location = {"display"} playlistId = {playlistId}/>
+
+      
     </div> 
     );
 }

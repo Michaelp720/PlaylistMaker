@@ -7,7 +7,7 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
 
     if(location === "form"){
         return(
-        <div class="card">
+        <div className="card">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
             <div class="card-body">
                 {`${title}`}
@@ -18,9 +18,9 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
     }
     else if(location === "all"){
         return(
-        <div class="card">
+        <div className="card">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
-            <div class="card-body">
+            <div className="card-body">
                 {`${title}`}
             </div>
             <button onClick = {() => handleAddRemove(thisSong)}>Add</button>
@@ -29,11 +29,11 @@ function SongCard({id, playlistId, artist, album, title, cover, location, handle
     }
     else{
     return(
-        <div class="card">
+        <div className="container">
+            <div className="row">
          {/* <img class="card-img-top" src={cover} alt="album cover"></img> */}
-            <div class="card-body">
-                {`${title}`}
-            </div>
+                {`${title}  by: ${artist}  album: ${album}`}
+        </div>
         </div>
     )}
 

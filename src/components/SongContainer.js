@@ -21,7 +21,7 @@ function SongContainer({songs, location, playlistId, handleRemove}){
     //if (songs.length === 0) return null //stops rendering if creating new playlist
 
     return (
-        <div className={`SongContainer`}>
+        <div>
             <SongSearch search = {search} setSearch={setSearch}/>
             {songCards}
         </div>
