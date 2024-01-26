@@ -52,6 +52,7 @@ function PlaylistEditor(){
     }
 
     function handleAdd(songObj){
+        console.log(`Num Songs in All Playlists Before Add: ${songsInAllPlaylists.length}`)
         songObj.id = songsInAllPlaylists.length + 1
         songObj.playlistId = parseInt(playlistId)
         setSongs([...songs, songObj])
@@ -60,6 +61,7 @@ function PlaylistEditor(){
 
     
     function handleRemove(songObj){
+        console.log(`Num Songs in All Playlists Before Remove: ${songsInAllPlaylists.length}`)
         const newSongsInAll = songsInAllPlaylists.filter(((song) => song.id !== songObj.id))
         newSongsInAll.forEach(song => {
             song.id = newSongsInAll.indexOf(song) + 1
@@ -70,62 +72,86 @@ function PlaylistEditor(){
     }
 
     function onPlaylistFormSubmit(playlistObj){
-        if(playlistObj.id > playlists.length){
+        const postingLength = songsInAllPlaylists.length;
+        if(playlistObj.id > playlists.length){ //new playlist
             fetch("http://localhost:3000/playlists", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(playlistObj),
-            });
-            for(let i = 1; i < startingSongs.length+1; i++){
-                fetch(`http://localhost:3000/songs/${i}`, {
-                    method: "DELETE"
-                })}
-                setStartingSongs(songsInAllPlaylists)
-    
-            for(let i = 0; i < songsInAllPlaylists.length; i++){
-                fetch("http://localhost:3000/songs", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(songsInAllPlaylists[i]),
-                });}
+            })
+            .then(deleteSongs(1, startingSongs.length, postingLength))
         }
-        else{
+        else{ //editing an old playlist
             fetch(`http://localhost:3000/playlists/${playlistObj.id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(playlistObj),
-            });
-            for(let i = 1; i < startingSongs.length+1; i++){
-            fetch(`http://localhost:3000/songs/${i}`, {
-                method: "DELETE"
-            })}
-            setStartingSongs(songsInAllPlaylists)
+            })
+            .then(deleteSongs(1, startingSongs.length, postingLength))
+        }
+        
+    }
 
-            for(let i = 0; i < songsInAllPlaylists.length; i++){
-            fetch("http://localhost:3000/songs", {
+
+
+    function deleteSongs(count, startLength, allLength){ //i is 1, length is starting songs.length
+        if (count < startLength+1){
+            fetch(`http://localhost:3000/songs/${count}`, {
+                    method: "DELETE"
+                })
+            .then(console.log(`deleted: ${count} startLength: ${startLength} allLength: ${allLength}`), count++, console.log(`count now: ${count}`), deleteSongs(count, startLength, allLength))
+        }
+        else{
+            console.log("all deleted, times run:" + count + "allLength: " + allLength)
+            postSongsTest(0, allLength)
+        }
+    }
+
+    function postSongsTest(count, length){
+        if(count < length){
+        fetch("http://localhost:3000/songs", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(songsInAllPlaylists[i]),
-            });}
+                body: JSON.stringify(songsInAllPlaylists[count]),
+            })
+            .then(console.log(`posted: ${songsInAllPlaylists[count].id} length: ${length} (4 expected)`), count++, postSongsTest(count, length))}
+        else{
+            //console.log("stopped")
+            window.location.href = `http://localhost:3001`
         }
     }
 
 
+    // function deletePlaylist(){
+    //     fetch(`http://localhost:3000/playlists/${playlistId}`, {
+    //               method: "DELETE"
+    //     })
+    //     setSongsInAllPlaylists()
+    //     window.location.href = `http://localhost:3001`
+    // }
+
+    // function logAllSongsLength(){
+    //     console.log(`Num all songs: ${songsInAllPlaylists.length}`)
+    //     console.log(songsInAllPlaylists)
+    // }
+
     return(
       <div>
         <NavBar editor = {true}/>
+        {/* <button onClick = {deletePlaylist}>Delete Playlist</button> */}
+        {/* <button onClick = {logAllSongsLength}>Log</button> */}
         <h1>PlaylistEditor</h1>
         {playlists.length > 0 ? <PlaylistForm playlist = {playlists[playlistId-1]} onPlaylistFormSubmit = {onPlaylistFormSubmit} songs = {songs} playlistId={playlistId} handleRemove = {handleRemove}/> : <div>Loading...</div>}
+        
         <h3>All Songs</h3>
         <AllSongsContainer handleAdd = {handleAdd}/>
+        
       </div>
     );
 }

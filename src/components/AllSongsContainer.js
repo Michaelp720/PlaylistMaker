@@ -19,7 +19,7 @@ function AllSongsContainer({handleAdd}){
     //     handleAdd(songObj)
     // }
     
-    const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase())))
+    const searchedSongs = songs.filter((song) => (song.title.toLowerCase().includes(search.toLowerCase()) || song.artist.toLowerCase().includes(search.toLowerCase()) || song.album.toLowerCase().includes(search.toLowerCase())))
 
     const songCards = searchedSongs.map((song) => (
         <SongCard key = {song.id} id = {song.id} artist = {song.artist} album = {song.album} title = {song.title} cover = {song.cover} location = {"all"} handleAddRemove = {handleAdd}/>

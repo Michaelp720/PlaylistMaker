@@ -6,9 +6,9 @@ function PlaylistForm({playlist, onPlaylistFormSubmit, songs, playlistId, handle
 
 
 
-    const [playlistTitle, setPlaylistTitle] = useState(playlist ? playlist.title : "");
-    const [playlistImage, setPlaylistImage] = useState(playlist ? playlist.image : "");
-    const [playlistDescription, setPlaylistDescription] = useState(playlist ? playlist.description : "");
+    const [playlistTitle, setPlaylistTitle] = useState(playlist ? playlist.title : "New Playlist");
+    const [playlistImage, setPlaylistImage] = useState(playlist ? playlist.image : "Image Link");
+    const [playlistDescription, setPlaylistDescription] = useState(playlist ? playlist.description : "Description");
 
     function handleTitleChange(event) {
         setPlaylistTitle(event.target.value);

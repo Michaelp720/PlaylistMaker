@@ -2,59 +2,45 @@
   "playlists": [
     {
       "id": 1,
-      "title": "Summer Vibey",
-      "image": "https://f4.bcbits.com/img/a0433217568_10.jpg",
+      "title": "Summer Vibes",
+      "image": "https://a.cdn-hotels.com/gdcs/production93/d498/e9d1655b-1dda-4e21-8402-c7a77c920611.jpg",
       "description": "Relax on the beach with some sunny psych-rock"
     },
     {
       "id": 2,
       "title": "Beach Blanket",
-      "image": "https://www.wizardingworld.com/images/products/books/UK/rectangle-1.jpg",
+      "image": "https://assets.wfcdn.com/im/36269696/resize-h445%5Ecompr-r85/2479/247913471/70.8%27%27+Beach+Umbrella.jpg",
       "description": "Cozy summer jams!"
-    },
-    {
-      "id": 3,
-      "title": "Gruzz",
-      "image": "img",
-      "description": "food"
     }
   ],
   "songs": [
     {
       "id": 1,
       "playlistId": 1,
-      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-      "title": "Dory",
-      "artist": "Grizzly Bear",
-      "album": "Veckatimest"
-    },
-    {
-      "id": 2,
-      "playlistId": 1,
+      "title": "Yet Again",
       "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-      "title": "Sleeping Ute",
       "artist": "Grizzly Bear",
       "album": "Shields"
     },
     {
-      "id": 3,
+      "id": 2,
       "playlistId": 2,
-      "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
-      "title": "Southern Point",
-      "artist": "Grizzly Bear",
-      "album": "Veckatimest"
+      "title": "Midnight City",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/9/94/M83_Hurry_Up%2C_We%27re_Dreaming.jpg",
+      "artist": "M83",
+      "album": "Hurry Up, We're Dreaming"
+    },
+    {
+      "id": 3,
+      "playlistId": 1,
+      "title": "The Scientist",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/e/e1/Coldplay_-_A_Rush_of_Blood_to_the_Head.jpg",
+      "artist": "Coldplay",
+      "album": "A Rush of Blood to the Head"
     },
     {
       "id": 4,
       "playlistId": 2,
-      "cover": "https://upload.wikimedia.org/wikipedia/en/a/af/GrizzlyBearShields.jpg",
-      "title": "Yet Again",
-      "artist": "Grizzly Bear",
-      "album": "Shields"
-    },
-    {
-      "id": 5,
-      "playlistId": 3,
       "title": "Dory",
       "cover": "https://f4.bcbits.com/img/a0433217568_10.jpg",
       "artist": "Grizzly Bear",
@@ -89,6 +75,118 @@
       "title": "Yet Again",
       "artist": "Grizzly Bear",
       "album": "Shields"
+    },
+    {
+      "id": 5,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/9/94/M83_Hurry_Up%2C_We%27re_Dreaming.jpg",
+      "title": "Midnight City",
+      "artist": "M83",
+      "album": "Hurry Up, We're Dreaming"
+    },
+    {
+      "id": 6,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/4/45/Radiohead_-_OK_Compact_Disc.png",
+      "title": "Karma Police",
+      "artist": "Radiohead",
+      "album": "OK Computer"
+    },
+    {
+      "id": 7,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/8/8e/Arctic_Monkeys_-_AM.png",
+      "title": "Do I Wanna Know?",
+      "artist": "Arctic Monkeys",
+      "album": "AM"
+    },
+    {
+      "id": 8,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/4/47/The_Black_Keys_-_Brothers.png",
+      "title": "Tighten Up",
+      "artist": "The Black Keys",
+      "album": "Brothers"
+    },
+    {
+      "id": 9,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/e/e1/Coldplay_-_A_Rush_of_Blood_to_the_Head.jpg",
+      "title": "The Scientist",
+      "artist": "Coldplay",
+      "album": "A Rush of Blood to the Head"
+    },
+    {
+      "id": 10,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/2/28/Arcade_Fire_-_Funeral.jpg",
+      "title": "Wake Up",
+      "artist": "Arcade Fire",
+      "album": "Funeral"
+    },
+    {
+      "id": 11,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/7/7a/Alt-J_-_An_Awesome_Wave.jpg",
+      "title": "Breezeblocks",
+      "artist": "alt-J",
+      "album": "An Awesome Wave"
+    },
+    {
+      "id": 12,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/5/57/Fleet_Foxes_Fleet_Foxes.jpg",
+      "title": "White Winter Hymnal",
+      "artist": "Fleet Foxes",
+      "album": "Fleet Foxes"
+    },
+    {
+      "id": 13,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Strokes_-_Is_This_It_cover.png",
+      "title": "Last Nite",
+      "artist": "The Strokes",
+      "album": "Is This It"
+    },
+    {
+      "id": 14,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/4/4a/Foster_the_People_Torches_Album_Cover.jpg",
+      "title": "Pumped Up Kicks",
+      "artist": "Foster the People",
+      "album": "Torches"
+    },
+    {
+      "id": 15,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/3/34/Tame_Impala_-_Currents.png",
+      "title": "The Less I Know The Better",
+      "artist": "Tame Impala",
+      "album": "Currents"
+    },
+    {
+      "id": 16,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/f/f4/Of_Monsters_and_Men_-_My_Head_Is_an_Animal.png",
+      "title": "Little Talks",
+      "artist": "Of Monsters and Men",
+      "album": "My Head Is an Animal"
+    },
+    {
+      "id": 17,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/2/2c/Vampire_Weekend_-_Vampire_Weekend.jpg",
+      "title": "A-Punk",
+      "artist": "Vampire Weekend",
+      "album": "Vampire Weekend"
+    },
+    {
+      "id": 18,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/f/fe/MumfordAndSonsAlbum.jpg",
+      "title": "I Will Wait",
+      "artist": "Mumford & Sons",
+      "album": "Babel"
+    },
+    {
+      "id": 19,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/f/f7/Two_Door_Cinema_Club_-_Tourist_History.png",
+      "title": "What You Know",
+      "artist": "Two Door Cinema Club",
+      "album": "Tourist History"
+    },
+    {
+      "id": 20,
+      "cover": "https://upload.wikimedia.org/wikipedia/en/8/82/Phoenix_-_Wolfgang_Amadeus_Phoenix_album_cover.png",
+      "title": "1901",
+      "artist": "Phoenix",
+      "album": "Wolfgang Amadeus Phoenix"
     }
   ]
 }

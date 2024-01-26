@@ -5,7 +5,7 @@ function PlaylistSearch({search, setSearch}) {
 
   return (
     <div className="playlist-search">
-      <input type="text" className="searchTerm" onChange = {e => setSearch(e.target.value)} value = {search} />
+      <input placeholder = "Search" type="text" className="searchTerm" onChange = {e => setSearch(e.target.value)} value = {search} />
     </div>
   );
 }
