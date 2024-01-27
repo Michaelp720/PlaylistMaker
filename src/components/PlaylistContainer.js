@@ -13,7 +13,7 @@ function PlaylistContainer() {
         .then(setPlaylists)
     }, [])
 
-    const searchedPlaylists = playlists.filter((playlist) => (playlist.title.toLowerCase().includes(search.toLowerCase())))
+    const searchedPlaylists = playlists.filter((playlist) => (playlist.title.toLowerCase().includes(search.toLowerCase()) || playlist.description.toLowerCase().includes(search.toLowerCase())))
 
     const playlistCards = searchedPlaylists.map((playlist) => (
         <PlaylistCard key = {playlist.id} id = {playlist.id} title = {playlist.title} image = {playlist.image} description = {playlist.description} followPlaylist = {followPlaylist}/>
